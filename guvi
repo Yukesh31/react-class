@@ -49,4 +49,72 @@ Scripts :
 > npm run guvi (Custom Commands)
 
 
+/////////////////////////==================================//////////////////////////////////////////////////
+
+import React from "react";
+import Applic from "./Applic";
+
+class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            count:2,        };
+        this.firstName="yukesh";
+    }
+    increment=()=>{
+        this.setState({count:3});
+        console.log(this.state.count);
+    };
+    decrement=()=>{
+        this.setState({count:1});
+        console.log(this.state.count);
+    };
+    reset=()=>{
+        this.setState({count:0});
+        console.log(this.state.count);
+    };
+    
+    render(){
+        console.log(this.props);
+        
+      return (
+      <>
+      <p>helllooooo {this.props.name}   iam class</p>
+      <p>count:{this.state.count}</p>
+      <Applic name={"yukii"}/>
+      <button onClick={this.increment} >increment</button>
+      <button onClick={this.decrement} >decrement</button>
+      <button onClick={this.reset} >reset</button>
+    
+      </>
+      );
+    }
+
+  }
+
+  export default App;
+  
+  
+  
+  "HTML":
+  import React from "react";
+import  ReactDOM   from "react-dom";
+
+import App from "./App";
+
+
+ReactDOM.render(
+  <>
+<App
+name={"guv"}/>
+</>,document.getElementById("root"));
+
+"applic":
+function Applic(props){
+    return <p>hiiiiiiiiii {props.name} am in function</p>
+}
+ export default Applic;
+ 
+ /////////////////////////////////=========================================//////////////////////
+
 
